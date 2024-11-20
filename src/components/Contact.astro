@@ -1,0 +1,225 @@
+<main class="contact">
+	<div class="info">
+		<div class="">
+			<h1 class="contact_title">Loren Ipsum</h1>
+			<h2 class="contact_subtitle">Contactanos</h2>
+		</div>
+
+		<p class="description">
+			Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem
+			ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum
+		</p>
+
+		<div class="info-icon">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp"
+				><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+					d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9"></path><path
+					d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+				></path></svg
+			>
+			<span>+51 956 565 565</span>
+		</div>
+
+		<div class="info-icon">
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				width="24"
+				height="24"
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				class="icon icon-tabler icons-tabler-outline icon-tabler-map-pin"
+				><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+					d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path><path
+					d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"
+				></path></svg
+			>
+			<span>Calle Schell 343 , of,904- 905 , Miraflores Lima-Perú</span>
+		</div>
+
+		<div class="map">
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.655093310078!2d-77.04522722518757!3d-12.067235488171185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8e8ef1e0a8b%3A0xd26a9a8e5431a1e8!2sTeatro%20del%20Centro%20de%20la%20Amistad%20Peruano%20China!5e0!3m2!1ses!2spe!4v1732137568259!5m2!1ses!2spe"
+				width="600"
+				height="450"
+				style="border:0;"
+				allowfullscreen=""
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div>
+	<div class="form-container">
+		<form action="" class="" id="form">
+			<label for="">
+				Nombres y Apellidos *
+				<input type="text" name="name" placeholder="Ingrese su nombre" />
+			</label>
+
+			<div class="form-two-column">
+				<label for="">
+					DNI o RUC
+					<input
+						type="text"
+						name="DNIorRuc"
+						placeholder="Ingrese su DNI o RUC"
+					/>
+				</label>
+
+				<label for="">
+					Celular *
+					<input
+						type="number"
+						name="celular"
+						placeholder="Ingrese su celular"
+					/>
+				</label>
+			</div>
+
+			<label for="">
+				Correo *
+				<input type="email" name="correo" placeholder="Ingrese su Correo" />
+			</label>
+
+			<label for="">
+				Direccion
+				<input
+					type="text"
+					name="direccion"
+					placeholder="Ingrese su Direccion"
+				/>
+			</label>
+			<label for="">
+				Rubro
+				<input type="text" name="rubro" placeholder="Ingrese su Rubro" />
+			</label>
+			<label for="">
+				Mensaje
+				<textarea name="mensaje" id="" placeholder="Ingrese su Mensaje"
+				></textarea>
+			</label>
+
+			<button>Enviar</button>
+		</form>
+	</div>
+</main>
+
+<script is:inline>
+	const form = document.getElementById('form');
+
+	form.addEventListener('submit', (e) => {
+		e.preventDefault();
+		console.log('submit');
+
+		const formData = new FormData(form);
+		const data = Object.fromEntries(formData);
+		console.log(data);
+		// for (const [key, value] of formData.entries()) {
+		// 	console.log(`${key}: ${value}\n`);
+		// }
+
+		alert('la data es', data);
+	});
+</script>
+
+<style>
+	.contact {
+		display: flex;
+		/* flex-direction: column; */
+		justify-content: center;
+		gap: 50px;
+
+		padding: 25px;
+	}
+
+	.info {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.contact_title,
+	.contact_subtitle {
+		font-size: 2.5rem;
+		margin: 0;
+		padding: 0;
+	}
+
+	.contact-subtitle {
+		font-weight: 800;
+	}
+
+	.description {
+		max-width: 550px;
+	}
+	.map {
+		border-radius: 15px;
+		overflow: hidden;
+	}
+
+	.info-icon {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		font-weight: 600;
+	}
+	.form-container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	form {
+		padding: 40px;
+		background: #f1f1f1;
+		border-radius: 5px;
+	}
+
+	label {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		margin-bottom: 15px;
+		font-weight: 600;
+	}
+
+	input,
+	textarea {
+		border-radius: 7px;
+		border: solid 2px #b3b3b3;
+		padding: 10px;
+	}
+
+	.form-two-column {
+		display: flex;
+		gap: 4px;
+		/* flex-direction: column; */
+	}
+
+	button {
+		background: rgb(37, 37, 37);
+		color: white;
+		width: 100%;
+		padding: 12px;
+		border-radius: 5px;
+		margin-top: 5px;
+	}
+
+	@media (max-width: 900px) {
+		.contact {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+</style>
